@@ -12,7 +12,7 @@ https://academy.nomadcoders.co/p/javascript-fullstack-from-zero-to-hero
 - [x] Search
 - [ ] User Detail
 - [x] Edit Profile
-- [ ] Change Password
-- [ ] Upload
+- [x] Change Password
+- [x] Upload
 - [ ] Video Detail
-- [ ] Edit Page
+- [x] Edit Page
