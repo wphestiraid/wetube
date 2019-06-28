@@ -17,7 +17,13 @@ const VideoSchema = new Schema({
   createdAt: {
     type: Date,
     default: Date.now
-  }
+  },
+  comments: [
+    {
+      type: Schema.Types.ObjectId,
+      ref: 'Comment'
+    }
+  ]
 });
 
 const model = mongoose.model('Video', VideoSchema);
