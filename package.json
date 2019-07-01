@@ -6,6 +6,10 @@
     "start": "nodemon --exec babel-node init.js --delay 2"
   },
   "author": "Flynn",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/wphestiraid/wetube.git"
+  },
   "license": "MIT",
   "dependencies": {
     "body-parser": "^1.19.0",
