@@ -3,8 +3,8 @@ import dotenv from 'dotenv';
 
 dotenv.config();
 
-const MONGO_URL = process.env.MONGO_URL;
-const MONGO_PORT = process.env.MONGO_PORT;
+const { MONGO_URL } = process.env;
+const { MONGO_PORT } = process.env;
 
 mongoose.connect(`mongodb://${MONGO_URL}:${MONGO_PORT}/wetube`, {
   useNewUrlParser: true,
