@@ -4,7 +4,8 @@
   "description": "Cloning Youtube with VanilaJS and NodeJS",
   "scripts": {
     "dev:server": "nodemon --exec babel-node init.js --delay 2",
-    "dev:assets": "webpack"
+    "dev:assets": "WEBPACK_ENV=development webpack",
+    "build:assets": "WEBPACK_ENV=production webpack"
   },
   "author": "Flynn",
   "repository": {
@@ -17,6 +18,7 @@
     "cookie-parser": "^1.4.4",
     "dotenv": "^8.0.0",
     "express": "^4.17.1",
+    "extract-text-webpack-plugin": "^4.0.0-beta.0",
     "helmet": "^3.18.0",
     "mongoose": "^5.6.1",
     "morgan": "^1.9.1",
