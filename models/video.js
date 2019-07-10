@@ -1,4 +1,4 @@
-import { Schema, Model } from 'mongoose';
+import mongoose, { Schema } from 'mongoose';
 
 const VideoSchema = new Schema({
   fileUrl: {
@@ -26,6 +26,6 @@ const VideoSchema = new Schema({
   ]
 });
 
-const model = Model('Video', VideoSchema);
+const model = mongoose.model('Video', VideoSchema);
 
 export default model;
