@@ -126,9 +126,24 @@ export const postEditProfile = async (req, res) => {
     });
     return res.redirect(routes.me);
   } catch (error) {
-    return res.render('editProfile', { pageTitle: 'Edit Profile' });
+    return res.redirect(routes.editProfile);
   }
 };
 
-export const changePassword = (req, res) =>
+export const getChangePassword = (req, res) =>
   res.render('changePassword', { pageTitle: 'Change Password' });
+
+export const postChangePassword = async (req, res) => {
+  const {
+    body: { oldPassword, newPassword1, newPassword2 }
+  } = req;
+  try {
+    if (newPassword1 !== newPassword2) {
+      return res.status(400).redirect(`/users${routes.changePassword}`);
+    }
+    await req.user.changePassword(oldPassword, newPassword1);
+    return res.redirect(routes.me);
+  } catch (error) {
+    return res.status(400).render(`/users${routes.changePassword}`);
+  }
+};
