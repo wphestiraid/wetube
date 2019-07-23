@@ -1,6 +1,5 @@
 import routes from '../routes';
 import Video from '../models/video';
-import { userDetail } from './userController';
 
 export const home = async (req, res) => {
   try {
@@ -78,9 +77,12 @@ export const getEditVideo = async (req, res) => {
   } = req;
   try {
     const video = await Video.findById(id);
-    res.render('editVideo', { pageTitle: `Edit ${video.title}`, video });
+    if (video.creator !== req.user.id) {
+      throw Error();
+    }
+    return res.render('editVideo', { pageTitle: `Edit ${video.title}`, video });
   } catch (error) {
-    res.redirect(routes.home);
+    return res.redirect(routes.home);
   }
 };
 
@@ -102,6 +104,10 @@ export const deleteVideo = async (req, res) => {
     params: { id }
   } = req;
   try {
+    const video = await Video.findById(id);
+    if (video.creator !== req.user.id) {
+      throw Error();
+    }
     await Video.findOneAndRemove({ _id: id });
   } catch (error) {
     console.log(error);
