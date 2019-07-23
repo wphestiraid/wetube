@@ -6,7 +6,9 @@ const UserSchema = new Schema({
   email: String,
   avatarUrl: String,
   facebookId: Number,
-  githubId: Number
+  githubId: Number,
+  comments: [{ type: Schema.Types.ObjectId, ref: 'Comment' }],
+  videos: [{ type: Schema.Types.ObjectId, ref: 'Video' }]
 });
 
 UserSchema.plugin(passportLocalMongoose, {
