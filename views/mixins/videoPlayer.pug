@@ -2,14 +2,14 @@ mixin videoPlayer(video={})
   .videoPlayer#jsVideoPlayer
     video(src=`/${video.fileUrl}`)
     .videoPlayer__controls
-      .videoPlayer_column
-        span
+      .videoPlayer__column
+        span#jsVolumeButton
           i.fas.fa-volume-up
         span
-          |00:00 / 10:00
-      .videoPlayer_column
+          | 00:00 / 10:00
+      .videoPlayer__column
         span#jsPlayButton
           i.fas.fa-play
-      .videoPlayer_column
+      .videoPlayer__column
         span
           i.fas.fa-expand
