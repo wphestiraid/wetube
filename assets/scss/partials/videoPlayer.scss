@@ -6,6 +6,7 @@
     }
   }
   video {
+    width: 100%;
     max-width: 100%;
   }
   .videoPlayer__controls {
@@ -34,7 +35,7 @@
     .videoPlayer__column:nth-child(2) {
       justify-self: center;
     }
-    i {
+    svg {
       font-size: 25px;
       cursor: pointer;
     }
